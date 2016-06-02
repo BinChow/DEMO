@@ -1,5 +1,5 @@
 Demo Outline
-------------
+============
 
 the demo simulates supermarket business:
 
@@ -13,14 +13,15 @@ the demo simulates supermarket business:
 
 
 Design Outline
-------------
+============
+
 ### the supermarket ###
 
-        supermarket starts to run business by initializing for business, then it starts two threads for cashiers and customers
+>  1. supermarket starts to run business by initializing for business, then it starts two threads for cashiers and customers
 
-        each thread synchronizedly access the public resources of `prioritised cashier queue`, `customer waiting list` and `warehouse storage`
+>  2. each thread synchronizedly access the public resources of `prioritised cashier queue`, `customer waiting list` and `warehouse storage`
 
-        supermarket finishes the sale and do the statistics after the children threads are returned
+>  3. supermarket finishes the sale and do the statistics after the children threads are returned
 
 ### cashier thread ###
 
@@ -43,7 +44,8 @@ Design Outline
   * the thread stops in the warehouse storage is empty.
 
 Wrap up
-------------
+============
+
 1. the muliti thread programming is clear and simple, each thread handles the resposibility in its own perspective
 
 2. father thread and two children threads option may not be the only alternative, actually it can be solve in two threads option: that is father thread (for supermarket and cashier) and child thread (for customer). but the current solution is more clear for review.
