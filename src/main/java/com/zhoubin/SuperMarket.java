@@ -9,7 +9,10 @@ public class SuperMarket {
     private String contactInfo;
 
     public static void main(String[] args) {
+        runSuperMarketBusiness();
+    }
 
+    public static void runSuperMarketBusiness() {
         final Business business= new Business();
         business.initBusiness();
 

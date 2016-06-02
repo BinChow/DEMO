@@ -75,14 +75,12 @@ public class Business {
                 }
             }
 
-            Customer customer = customerQueue.remove();
             Cashier cashier = cashierPriorityQueue.poll();
-            Cashier newCashier = new Cashier();
-            newCashier.setCashTime(System.currentTimeMillis() + RandomUtils.randomCashierGeneration());
-            newCashier.setEmployeeNumber(cashier.getEmployeeNumber());
-            newCashier.setName(cashier.getName());
+            Cashier newCashier = new Cashier(cashier.getName(), cashier.getEmployeeNumber(),
+                System.currentTimeMillis() + RandomUtils.randomCashierGeneration());
             cashierPriorityQueue.add(newCashier);
 
+            Customer customer = customerQueue.remove();
             if (cashier != null && customer != null && customer.getGood() != null) {
                 statistic.addCustomerCount();
                 statistic.updateWaitDuration(customer);
