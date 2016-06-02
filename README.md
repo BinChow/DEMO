@@ -17,31 +17,31 @@ Design Outline
 
 ### the supermarket ###
 
->       * supermarket starts to run business by initializing for business, then it starts two threads for cashiers and customers
+> 1. supermarket starts to run business by initializing for business, then it starts two threads for cashiers and customers
 
->       * each thread synchronizedly access the public resources of `prioritised cashier queue`, `customer waiting list` and `warehouse storage`
+> 2. each thread synchronizedly access the public resources of `prioritised cashier queue`, `customer waiting list` and `warehouse storage`
 
->       * supermarket finishes the sale and do the statistics after the children threads are returned
+> 3. supermarket finishes the sale and do the statistics after the children threads are returned
 
 ### cashier thread ###
 
-  * rounds robin in 10 milli seconds interval to check available cashier and serve customer. the reason of round robin is minimizing the thread number and casting down the overhead thread synchronization
+> 1. rounds robin in 10 milli seconds interval to check available cashier and serve customer. the reason of round robin is minimizing the thread number and casting down the overhead thread synchronization
 
-  * check the available cashier and serve customer
+> 2. check the available cashier and serve customer
 
-  * once the cashier serves, he/she gets ready for serving next time
+> 3. once the cashier serves, he/she gets ready for serving next time
 
-  * once the customer is serve, the customer and good info is recorded for statistics.
+> 4. once the customer is serve, the customer and good info is recorded for statistics.
 
-  * the thread stops if there is no waiting customers and the warehouse is empty.
+> 5. the thread stops if there is no waiting customers and the warehouse is empty.
 
 ### customer thread ###
 
-  * randomly generate customer with random choice
+> 1. randomly generate customer with random choice
 
-  * if there is available product, the warehouse storage is update and the customer is waiting in line for cashier
+> 2. if there is available product, the warehouse storage is update and the customer is waiting in line for cashier
 
-  * the thread stops in the warehouse storage is empty.
+> 3. the thread stops in the warehouse storage is empty.
 
 Wrap up
 ============
