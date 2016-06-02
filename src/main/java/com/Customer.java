@@ -1,4 +1,4 @@
-package main.java.com.zhoubin;
+package main.java.com;
 
 /**
  * Created by ZhouBin on 5/30/16.

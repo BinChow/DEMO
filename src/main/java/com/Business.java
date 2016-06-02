@@ -1,4 +1,4 @@
-package main.java.com.zhoubin;
+package main.java.com;
 
 import java.util.*;
 
