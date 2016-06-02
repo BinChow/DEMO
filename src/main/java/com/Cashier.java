@@ -11,7 +11,6 @@ public class Cashier {
     public void setName(String name) {
         this.name = name;
     }
-
     public String getName() {
         return name;
     }
@@ -32,12 +31,12 @@ public class Cashier {
         return cashTime;
     }
 
-    public Cashier(String name, Integer employeeNumber, Long cashTime) {
-        this.name = name;
-        this.employeeNumber = employeeNumber;
-        this.cashTime = cashTime;
-    }
-
     public Cashier () {
+
+    }
+    public Cashier(String name, Integer employeeNumber, Long cashTime) {
+        setName(name);
+        setEmployeeNumber(employeeNumber);
+        setCashTime(cashTime);
     }
 }

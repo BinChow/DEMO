@@ -4,15 +4,15 @@ package main.java.com;
  * Created by ZhouBin on 5/30/16.
  */
 public class Customer {
-    private String name;
-    private Good good;
+    private String name;        // customer name, randomly generated
+    private Good good;          // the good customer chooses
 
-    public Customer () {
+    public String getName() {
+        return this.name;
     }
 
-    public Customer(String name, Integer goodType, Good good) {
+    public void setName(String name) {
         this.name = name;
-        this.good = good;
     }
 
     public Good getGood() {
@@ -21,5 +21,13 @@ public class Customer {
 
     public void setGood(Good good) {
         this.good = good;
+    }
+
+    public Customer () {
+    }
+
+    public Customer(String name, Good good) {
+        this.name = name;
+        setGood(good);
     }
 }

@@ -7,13 +7,13 @@ import java.util.List;
  * Created by ZhouBin on 6/1/16.
  */
 public class Statistic {
-    private Long saleStart;
-    private Long saleFinish;
-    private Long productSoldDuration;
-    private Long waitDuration;
-    private Integer customerCount;
-    private List<Integer> cashierServiceCounts;
-    private List<Cashier> cashiers;
+    private Long saleStart;                         // the time super market runs business, sale starts
+    private Long saleFinish;                        // the time there are neither waiting customers nor available goods, sale finishes
+    private Long productSoldDuration;               // the total duration of each product sold since sale starts
+    private Long waitDuration;                      // the total duration of each customer waiting
+    private Integer customerCount;                  // the total of customer served
+    private List<Integer> cashierServiceCounts;     // the total of customer served by each cashier
+    private List<Cashier> cashiers;                 // the map of cashier info
 
     public Statistic (Integer cashierSize) {
         this.saleStart = 0L;
@@ -51,28 +51,51 @@ public class Statistic {
         return this.cashiers;
     }
 
+    public Integer getCustomerCount() {
+        return this.customerCount;
+    }
+
+    /**
+     * increase customer count by one, after the customer is served
+     * @return
+     */
     public Integer addCustomerCount() {
         this.customerCount++;
         return this.customerCount;
     }
 
+    /**
+     * accumulate the waiting duration of each customer, after the customer is served
+     * @param customer
+     */
     public void updateWaitDuration(Customer customer) {
         Long now = System.currentTimeMillis();
         Long purchaseTime = customer.getGood().getPurchaseTime();
         this.waitDuration += now - purchaseTime;
     }
 
+    /**
+     * record the customer is served by the cashier
+     * @param cashier
+     */
     public void updateCashierServiceCount(Cashier cashier) {
         Integer employeeNumber = cashier.getEmployeeNumber();
         Integer count = cashierServiceCounts.get(employeeNumber) + 1;
         cashierServiceCounts.set(employeeNumber, count);
     }
 
+    /**
+     * accumulate the duration of each product being sold, since the sale starts
+     * @param customer
+     */
     public void updateProductSoldDuration(Customer customer) {
         Long purchaseTime = customer.getGood().getPurchaseTime();
         this.productSoldDuration += purchaseTime - saleStart;
     }
 
+    /**
+     * output the statistic results
+     */
     public void outputResult() {
         Double averageWaitDuration = new Double(waitDuration) / new Double(customerCount);
         Double averageSoldDuration = new Double(productSoldDuration) / new Double(customerCount);
