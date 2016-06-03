@@ -185,7 +185,7 @@ public class Business {
     }
 
     /**
-     * initialize the business
+     * initializer
      */
     public Business() {
         // initialize the priority queue for cashiers

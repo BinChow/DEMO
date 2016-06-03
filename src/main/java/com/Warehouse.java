@@ -7,8 +7,7 @@ import java.util.Map;
  * Created by ZhouBin on 5/31/16.
  */
 public class Warehouse {
-    // the map from good type to good left count
-    private Map<Integer, Integer> storage;
+    private Map<Integer, Integer> storage;          // the map from good type to good left count
 
     public Warehouse() {
         this.storage = new HashMap<Integer, Integer>();

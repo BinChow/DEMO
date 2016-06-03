@@ -12,6 +12,7 @@ public class RandomUtils {
 
     /**
      * randomly generated string as customer's name
+     *
      * @param length
      * @return
      */
@@ -25,6 +26,7 @@ public class RandomUtils {
 
     /**
      * randomly choose a character
+     *
      * @return
      */
     private static Integer randomCharactor() {
@@ -35,6 +37,7 @@ public class RandomUtils {
 
     /**
      * randomly choose from categories of product
+     *
      * @return
      */
     public static Integer randomTypeChoice() {
@@ -46,6 +49,7 @@ public class RandomUtils {
     /**
      * take 10 milli seconds as unit to generate time in range 1000 to 3000 milli seconds
      * 10 milli seconds are also the interval of cashier rounds robin to serve
+     *
      * @return
      */
     public static long randomCustomerGeneration() {
@@ -57,6 +61,7 @@ public class RandomUtils {
     /**
      * take 10 milli seconds as unit to generate time in range 5000 to 10000 milli seconds
      * 10 milli seconds are also the interval of cashier rounds robin to serve
+     *
      * @return
      */
     public static long randomCashierGeneration() {
