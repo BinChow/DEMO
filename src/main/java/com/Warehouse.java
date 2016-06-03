@@ -15,6 +15,7 @@ public class Warehouse {
 
     /**
      * check if the warehouse is empty
+     *
      * @return
      */
     public Boolean isEmpty() {
@@ -29,6 +30,7 @@ public class Warehouse {
 
     /**
      * get the product count by type
+     *
      * @param type
      * @return
      */
@@ -39,6 +41,7 @@ public class Warehouse {
 
     /**
      * set the product count by type
+     *
      * @param type
      * @param count
      * @return
@@ -52,6 +55,7 @@ public class Warehouse {
 
     /**
      * decrease the good count for type by one
+     *
      * @param type
      * @return
      */
