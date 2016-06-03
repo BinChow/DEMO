@@ -35,6 +35,7 @@ public class SuperMarket {
     public static Business runBusiness() {
         final Business business = new Business();
 
+        // cashier and customer are two separate threads
         Thread threadCashier = new Thread(new Runnable() {
             @Override
             public void run() {
@@ -50,6 +51,7 @@ public class SuperMarket {
         threadCashier.start();
         threadCustomer.start();
 
+        // wait until children threads end
         try {
             threadCashier.join();
             threadCustomer.join();
