@@ -15,14 +15,14 @@ public class SuperMarket {
     /**
      * the business opens two threads:
      *
-     * 1.  cashier thread rounds robin in 10 milli seconds interval to check:
+     * 1.  cashier subroutine checks in 10 milli seconds time slice:
      *     if there are available cashiers to serve the customer
      *         if there are customers
      *             the cashiers serve customers one by one
      *         else
      *             the cashier waits for customer
      *     else
-     *         continues to round robin
+     *         continues to check in next time slice
      *
      * 2.  customer thread generates customer randomly in 1000 to 3000 milli seconds interval:
      *     if the good is available for the customer to choose

@@ -25,7 +25,7 @@ Design Outline
 
 ### cashier thread ###
 
-> 1. rounds robin in 10 milli seconds interval to check available cashier and serve customer. the reason of round robin is minimizing the thread number and casting down the overhead thread synchronization
+> 1. time slice in 10 milli seconds interval to check available cashier and serve customer. the reason of time slicing is minimizing the thread number and casting down the overhead thread synchronization
 
 > 2. check the available cashier and serve customer
 

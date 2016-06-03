@@ -48,7 +48,7 @@ public class RandomUtils {
 
     /**
      * take 10 milli seconds as unit to generate time in range 1000 to 3000 milli seconds
-     * 10 milli seconds are also the interval of cashier rounds robin to serve
+     * 10 milli seconds are also the interval of cashier time slicing
      *
      * @return
      */
@@ -60,7 +60,7 @@ public class RandomUtils {
 
     /**
      * take 10 milli seconds as unit to generate time in range 5000 to 10000 milli seconds
-     * 10 milli seconds are also the interval of cashier rounds robin to serve
+     * 10 milli seconds are also the interval of cashier time slicing
      *
      * @return
      */

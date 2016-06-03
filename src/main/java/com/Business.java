@@ -20,14 +20,14 @@ public class Business {
     }
 
     /**
-     *     cashier subroutine rounds robin in 10 milli seconds interval to check:
+     *     cashier subroutine checks in 10 milli seconds time slice:
      *     if there are available cashiers to serve the customer
      *         if there are customers
      *             the cashiers serve customers one by one
      *         else
      *             the cashier waits for customer
      *     else
-     *         continues to round robin
+     *         continues to check in next time slice
      */
     public void subRoutineCashier(){
         while (true) {
@@ -44,7 +44,7 @@ public class Business {
                     }
                 }
 
-                // round robin to serve custom is 10 milli seconds interval
+                // serve customer is 10 milli seconds interval
                 Thread.sleep(10);
             } catch (InterruptedException e) {
                 e.printStackTrace();
